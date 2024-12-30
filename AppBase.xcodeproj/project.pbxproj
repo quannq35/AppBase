@@ -33,6 +33,11 @@
 		1490F7B52D22FD5A009059AE /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1490F7B42D22FD59009059AE /* HomeViewController.xib */; };
 		1490F7B62D22FD5A009059AE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490F7B32D22FD59009059AE /* HomeViewController.swift */; };
 		1490F7B82D22FE73009059AE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490F7B72D22FE73009059AE /* BaseViewController.swift */; };
+		1490F7BF2D2306A1009059AE /* APIRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490F7BE2D2306A1009059AE /* APIRoute.swift */; };
+		1490F7C12D2306A9009059AE /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490F7C02D2306A9009059AE /* APIClient.swift */; };
+		1490F7C32D2306BC009059AE /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490F7C22D2306BC009059AE /* BaseAPI.swift */; };
+		1490F7C52D2306C9009059AE /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490F7C42D2306C9009059AE /* TargetType.swift */; };
+		1490F7C72D2306D6009059AE /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490F7C62D2306D6009059AE /* BaseResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +88,11 @@
 		1490F7B32D22FD59009059AE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1490F7B42D22FD59009059AE /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		1490F7B72D22FE73009059AE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		1490F7BE2D2306A1009059AE /* APIRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRoute.swift; sourceTree = "<group>"; };
+		1490F7C02D2306A9009059AE /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		1490F7C22D2306BC009059AE /* BaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
+		1490F7C42D2306C9009059AE /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
+		1490F7C62D2306D6009059AE /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				1490F7A62D22F536009059AE /* SuuportFiles */,
-				1490F7892D22F435009059AE /* Route */,
+				1490F7892D22F435009059AE /* AppRoute */,
 				1490F7882D22F41A009059AE /* Base */,
 				1490F78A2D22F442009059AE /* Views */,
 				1490F7612D22F3FC009059AE /* Assets.xcassets */,
@@ -164,6 +174,7 @@
 		1490F7882D22F41A009059AE /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				1490F7BA2D2305BF009059AE /* Networking */,
 				1490F7902D22F49E009059AE /* BaseCoordinator */,
 				1490F78F2D22F495009059AE /* BaseNavigationController */,
 				1490F78E2D22F488009059AE /* BaseViewController */,
@@ -172,12 +183,12 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
-		1490F7892D22F435009059AE /* Route */ = {
+		1490F7892D22F435009059AE /* AppRoute */ = {
 			isa = PBXGroup;
 			children = (
 				1490F78B2D22F467009059AE /* AppRoute.swift */,
 			);
-			path = Route;
+			path = AppRoute;
 			sourceTree = "<group>";
 		};
 		1490F78A2D22F442009059AE /* Views */ = {
@@ -264,6 +275,42 @@
 				1490F75E2D22F3F9009059AE /* Main.storyboard */,
 			);
 			path = SuuportFiles;
+			sourceTree = "<group>";
+		};
+		1490F7BA2D2305BF009059AE /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				1490F7BB2D2305E7009059AE /* Alamofire */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		1490F7BB2D2305E7009059AE /* Alamofire */ = {
+			isa = PBXGroup;
+			children = (
+				1490F7BD2D230675009059AE /* Base */,
+				1490F7BC2D23066D009059AE /* API */,
+			);
+			path = Alamofire;
+			sourceTree = "<group>";
+		};
+		1490F7BC2D23066D009059AE /* API */ = {
+			isa = PBXGroup;
+			children = (
+				1490F7BE2D2306A1009059AE /* APIRoute.swift */,
+				1490F7C02D2306A9009059AE /* APIClient.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		1490F7BD2D230675009059AE /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				1490F7C22D2306BC009059AE /* BaseAPI.swift */,
+				1490F7C42D2306C9009059AE /* TargetType.swift */,
+				1490F7C62D2306D6009059AE /* BaseResponse.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -401,10 +448,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1490F7C52D2306C9009059AE /* TargetType.swift in Sources */,
 				1490F7992D22F4E4009059AE /* ProfileViewModel.swift in Sources */,
 				1490F75D2D22F3F9009059AE /* ViewController.swift in Sources */,
+				1490F7C32D2306BC009059AE /* BaseAPI.swift in Sources */,
 				1490F7AC2D22F62D009059AE /* AppCoordinator.swift in Sources */,
 				1490F79B2D22F4F3009059AE /* HomeViewModel.swift in Sources */,
+				1490F7BF2D2306A1009059AE /* APIRoute.swift in Sources */,
 				1490F78C2D22F467009059AE /* AppRoute.swift in Sources */,
 				1490F7B62D22FD5A009059AE /* HomeViewController.swift in Sources */,
 				1490F7972D22F4D6009059AE /* ProfileViewController.swift in Sources */,
@@ -416,7 +466,9 @@
 				1490F7A52D22F521009059AE /* LoginViewController.swift in Sources */,
 				1490F7B82D22FE73009059AE /* BaseViewController.swift in Sources */,
 				1490F7A82D22F5C4009059AE /* BaseCoordinator.swift in Sources */,
+				1490F7C72D2306D6009059AE /* BaseResponse.swift in Sources */,
 				1490F7A12D22F517009059AE /* LoginViewModel.swift in Sources */,
+				1490F7C12D2306A9009059AE /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
