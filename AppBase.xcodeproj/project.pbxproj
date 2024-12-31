@@ -36,7 +36,7 @@
 		1490F7BF2D2306A1009059AE /* APIRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490F7BE2D2306A1009059AE /* APIRoute.swift */; };
 		1490F7C12D2306A9009059AE /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490F7C02D2306A9009059AE /* APIClient.swift */; };
 		1490F7C32D2306BC009059AE /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490F7C22D2306BC009059AE /* BaseAPI.swift */; };
-		1490F7C52D2306C9009059AE /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490F7C42D2306C9009059AE /* TargetType.swift */; };
+		1490F7C52D2306C9009059AE /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490F7C42D2306C9009059AE /* Endpoint.swift */; };
 		1490F7C72D2306D6009059AE /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490F7C62D2306D6009059AE /* BaseResponse.swift */; };
 		9DD9925A26D0135CD247AA8A /* Pods_AppBase_AppBaseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3635AEDC6E589EB56B6BC4BC /* Pods_AppBase_AppBaseUITests.framework */; };
 		A855F7B32D2393300083E506 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A855F7B22D2393300083E506 /* UserModel.swift */; };
@@ -104,7 +104,7 @@
 		1490F7BE2D2306A1009059AE /* APIRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRoute.swift; sourceTree = "<group>"; };
 		1490F7C02D2306A9009059AE /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		1490F7C22D2306BC009059AE /* BaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
-		1490F7C42D2306C9009059AE /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
+		1490F7C42D2306C9009059AE /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		1490F7C62D2306D6009059AE /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		3635AEDC6E589EB56B6BC4BC /* Pods_AppBase_AppBaseUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppBase_AppBaseUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FE22680AB99CC32C7F2DD4E /* Pods-AppBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppBase.debug.xcconfig"; path = "Target Support Files/Pods-AppBase/Pods-AppBase.debug.xcconfig"; sourceTree = "<group>"; };
@@ -346,7 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				1490F7C22D2306BC009059AE /* BaseAPI.swift */,
-				1490F7C42D2306C9009059AE /* TargetType.swift */,
+				1490F7C42D2306C9009059AE /* Endpoint.swift */,
 				1490F7C62D2306D6009059AE /* BaseResponse.swift */,
 			);
 			path = Base;
@@ -680,7 +680,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A855F7BE2D23A1AA0083E506 /* BaseViewModel.swift in Sources */,
-				1490F7C52D2306C9009059AE /* TargetType.swift in Sources */,
+				1490F7C52D2306C9009059AE /* Endpoint.swift in Sources */,
 				1490F7992D22F4E4009059AE /* ProfileViewModel.swift in Sources */,
 				1490F75D2D22F3F9009059AE /* ViewController.swift in Sources */,
 				1490F7C32D2306BC009059AE /* BaseAPI.swift in Sources */,

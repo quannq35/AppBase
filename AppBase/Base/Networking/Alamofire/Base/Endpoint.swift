@@ -20,7 +20,7 @@ enum TypeRequest {
     case params(prameters: [String: Any], encoding: ParameterEncoding)
 }
 
-protocol TargetType {
+protocol Endpoint {
     var baseUrl: String { get }
     var path: String { get }
     var method: HTTPMethod { get }

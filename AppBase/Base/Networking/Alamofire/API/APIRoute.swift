@@ -13,7 +13,8 @@ enum APIRoute {
     case getUserInfor(id: String)
     case creatorUser(name: String, job: String)
 }
-extension APIRoute: TargetType {
+extension APIRoute: Endpoint {
+    
     var baseUrl: String {
         switch self {
         default:

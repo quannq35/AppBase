@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-class BaseAPI<T: TargetType> {
+class BaseAPI<T: Endpoint> {
     func performRequest<M: Decodable>( target: T, responseClass: M.Type, completion: @escaping (Result<M?, NSError>) -> Void) {
         let method = Alamofire.HTTPMethod(rawValue: target.method.rawValue)
         let header = Alamofire.HTTPHeaders(target.header ?? [:])
