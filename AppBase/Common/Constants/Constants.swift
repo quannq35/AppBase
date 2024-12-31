@@ -26,6 +26,9 @@ struct K {
         static let time1                = "HH:mm"
         static let time2                = "H 'giờ' m 'phút'"
         static let minute               = "m 'phút'"
+        
+        static let fullDate             = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+
     }
     
     struct Colors {
