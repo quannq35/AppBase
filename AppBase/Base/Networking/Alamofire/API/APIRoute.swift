@@ -26,7 +26,7 @@ extension APIRoute: TargetType {
         case .getUsers, .creatorUser:
             return "/users"
         case .getUserInfor(let id):
-            return "users/\(id)"
+            return "/users/\(id)"
         }
     }
     

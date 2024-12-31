@@ -26,5 +26,16 @@ class HomeViewController: BaseViewController {
                 print(error)
             }
         }
+        
+        APIClient.shared.getUserInfo(id: 1) { result in
+            switch result {
+            case .success(let user):
+                if let user = user?.data {
+                    print(user.email ?? "")
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 }
