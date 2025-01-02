@@ -12,7 +12,7 @@ class BaseAPI<T: Endpoint> {
     func performRequest<M: Decodable>( target: T, responseClass: M.Type, completion: @escaping (Result<M?, NSError>) -> Void) {
         let method = Alamofire.HTTPMethod(rawValue: target.method.rawValue)
         let header = Alamofire.HTTPHeaders(target.header ?? [:])
-        let params = buildParams(type: target.typeRequest)
+        let params = buildParams(type: target.parameters)
 
         AF.request(target.baseUrl + target.path, method: method, parameters: params.0, encoding: params.1, headers: header).responseDecodable(of: responseClass.self) { response in
             guard let statusCode = response.response?.statusCode else {
@@ -40,7 +40,7 @@ class BaseAPI<T: Endpoint> {
         let header = Alamofire.HTTPHeaders(target.header ?? [:])
         
         AF.upload(multipartFormData: { multipart in
-            if case .params(let parameters, _) = target.typeRequest {
+            if case .params(let parameters, _) = target.parameters {
                 for (key, value) in parameters {
                     if let value = value as? String, let valueData = value.data(using: .utf8) {
                         multipart.append(valueData, withName: key)
@@ -78,7 +78,7 @@ class BaseAPI<T: Endpoint> {
     }
 }
 
-private func buildParams(type: TypeRequest) -> ([String: Any], ParameterEncoding) {
+private func buildParams(type: Parameters) -> ([String: Any], ParameterEncoding) {
     switch type {
     case .plain:
         return ([:], URLEncoding.default)

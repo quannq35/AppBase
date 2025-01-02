@@ -15,7 +15,7 @@ enum HTTPMethod: String {
     case delete = "DELETE"
 }
 
-enum TypeRequest {
+enum Parameters {
     case plain
     case params(prameters: [String: Any], encoding: ParameterEncoding)
 }
@@ -24,6 +24,6 @@ protocol Endpoint {
     var baseUrl: String { get }
     var path: String { get }
     var method: HTTPMethod { get }
-    var typeRequest: TypeRequest { get }
+    var parameters: Parameters { get }
     var header: [String: String]? { get }
 }

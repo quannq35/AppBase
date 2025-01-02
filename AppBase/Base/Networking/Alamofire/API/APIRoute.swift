@@ -40,7 +40,7 @@ extension APIRoute: Endpoint {
         }
     }
     
-    var typeRequest: TypeRequest {
+    var parameters: Parameters {
         switch self {
         case .getUsers, .getUserInfor:
             return .plain
