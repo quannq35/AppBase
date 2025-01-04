@@ -11,7 +11,7 @@ class HomeViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Home"
+        self.title = Localizable_strings.homeTitle
         APIClient.shared.getUsers { result in
             switch result {
             case.success(let users):

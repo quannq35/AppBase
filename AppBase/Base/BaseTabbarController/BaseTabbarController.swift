@@ -41,11 +41,11 @@ class BaseTabBarController: UITabBarController {
         let homeNav = BaseNavigationController(rootViewController: homeViewController)
         let profileNav = BaseNavigationController(rootViewController: profileViewController)
         
-        homeNav.tabBarItem = UITabBarItem( title: "Home",
+        homeNav.tabBarItem = UITabBarItem( title: Localizable_strings.homeTitle,
                                            image: UIImage(systemName: "house.fill"),
                                            selectedImage: nil)
         
-        profileNav.tabBarItem = UITabBarItem(title: "Profile",
+        profileNav.tabBarItem = UITabBarItem(title: Localizable_strings.profileTitle,
                                              image: UIImage(systemName: "person.crop.circle"),
                                              selectedImage: nil)
         

@@ -11,6 +11,7 @@ class ProfileDetailViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = Localizable_strings.profileDetail
 
         // Do any additional setup after loading the view.
     }
