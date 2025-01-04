@@ -48,6 +48,8 @@
 		A855F7C42D23A3E10083E506 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A855F7C32D23A3E10083E506 /* String+Ext.swift */; };
 		A855F7C62D23A41D0083E506 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A855F7C52D23A41D0083E506 /* Date+Ext.swift */; };
 		A855F7C92D23A4BE0083E506 /* RoundBorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A855F7C82D23A4BE0083E506 /* RoundBorderView.swift */; };
+		A8D3D1C72D28F477005B93BD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A8D3D1C52D28F477005B93BD /* Localizable.strings */; };
+		A8D3D1C92D28F4BF005B93BD /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D3D1C82D28F4BF005B93BD /* Strings+Generated.swift */; };
 		AE5CA816753EE510991DA483 /* Pods_AppBaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 925FDC8F7D5E8E69064E6C3E /* Pods_AppBaseTests.framework */; };
 		CD65C91854C9D8E75E5A23C9 /* Pods_AppBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A177EBAA063A6A919597B85B /* Pods_AppBase.framework */; };
 /* End PBXBuildFile section */
@@ -121,6 +123,8 @@
 		A855F7C32D23A3E10083E506 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		A855F7C52D23A41D0083E506 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		A855F7C82D23A4BE0083E506 /* RoundBorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundBorderView.swift; sourceTree = "<group>"; };
+		A8D3D1C62D28F477005B93BD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A8D3D1C82D28F4BF005B93BD /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		CF3CDD37D6DD62887098A6B6 /* Pods-AppBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppBase.release.xcconfig"; path = "Target Support Files/Pods-AppBase/Pods-AppBase.release.xcconfig"; sourceTree = "<group>"; };
 		F7F288EAB8F3D5D774A96E54 /* Pods-AppBaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppBaseTests.release.xcconfig"; path = "Target Support Files/Pods-AppBaseTests/Pods-AppBaseTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -178,6 +182,7 @@
 		1490F7572D22F3F9009059AE /* AppBase */ = {
 			isa = PBXGroup;
 			children = (
+				A8D3D1C82D28F4BF005B93BD /* Strings+Generated.swift */,
 				1490F7A62D22F536009059AE /* SuuportFiles */,
 				1490F7892D22F435009059AE /* AppRoute */,
 				1490F7882D22F41A009059AE /* Base */,
@@ -187,6 +192,7 @@
 				1490F7612D22F3FC009059AE /* Assets.xcassets */,
 				1490F7632D22F3FC009059AE /* LaunchScreen.storyboard */,
 				1490F7662D22F3FC009059AE /* Info.plist */,
+				A8D3D1C52D28F477005B93BD /* Localizable.strings */,
 			);
 			path = AppBase;
 			sourceTree = "<group>";
@@ -550,6 +556,7 @@
 				1490F7A42D22F521009059AE /* LoginViewController.xib in Resources */,
 				1490F7B12D22FA2F009059AE /* ProfileDetailViewController.xib in Resources */,
 				1490F7962D22F4D6009059AE /* ProfileViewController.xib in Resources */,
+				A8D3D1C72D28F477005B93BD /* Localizable.strings in Resources */,
 				1490F7B52D22FD5A009059AE /* HomeViewController.xib in Resources */,
 				1490F7602D22F3F9009059AE /* Base in Resources */,
 			);
@@ -688,6 +695,7 @@
 				1490F79B2D22F4F3009059AE /* HomeViewModel.swift in Sources */,
 				1490F7BF2D2306A1009059AE /* APIRoute.swift in Sources */,
 				1490F78C2D22F467009059AE /* AppRoute.swift in Sources */,
+				A8D3D1C92D28F4BF005B93BD /* Strings+Generated.swift in Sources */,
 				1490F7B62D22FD5A009059AE /* HomeViewController.swift in Sources */,
 				1490F7972D22F4D6009059AE /* ProfileViewController.swift in Sources */,
 				A855F7B32D2393300083E506 /* UserModel.swift in Sources */,
@@ -759,6 +767,14 @@
 				1490F7642D22F3FC009059AE /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A8D3D1C52D28F477005B93BD /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A8D3D1C62D28F477005B93BD /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

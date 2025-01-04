@@ -15,7 +15,7 @@ class ProfileViewController: BaseViewController {
     // MARK: - lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Profile"
+        self.title = Localizable_strings.profileTitle
     }
     
     // MARK: IBActions
