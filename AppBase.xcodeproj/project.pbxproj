@@ -182,7 +182,6 @@
 		1490F7572D22F3F9009059AE /* AppBase */ = {
 			isa = PBXGroup;
 			children = (
-				A8D3D1C82D28F4BF005B93BD /* Strings+Generated.swift */,
 				1490F7A62D22F536009059AE /* SuuportFiles */,
 				1490F7892D22F435009059AE /* AppRoute */,
 				1490F7882D22F41A009059AE /* Base */,
@@ -318,6 +317,7 @@
 				1490F75A2D22F3F9009059AE /* SceneDelegate.swift */,
 				1490F75C2D22F3F9009059AE /* ViewController.swift */,
 				1490F75E2D22F3F9009059AE /* Main.storyboard */,
+				A8D3D1C82D28F4BF005B93BD /* Strings+Generated.swift */,
 			);
 			path = SuuportFiles;
 			sourceTree = "<group>";
