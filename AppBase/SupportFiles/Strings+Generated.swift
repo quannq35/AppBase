@@ -1,0 +1,49 @@
+// swiftlint:disable all
+// Generated using SwiftGen — https://github.com/SwiftGen/SwiftGen
+
+import Foundation
+
+// swiftlint:disable superfluous_disable_command file_length implicit_return prefer_self_in_static_references
+
+// MARK: - Strings
+
+// swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
+// swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
+internal enum Localizable_strings {
+  /// Home
+  internal static let homeTitle = Localizable_strings.tr("Localizable", "Home_Title", fallback: "Home")
+  /// Login
+  internal static let loginTitle = Localizable_strings.tr("Localizable", "Login_Title", fallback: "Login")
+  /// Localizable.strings
+  ///   AppBase
+  /// 
+  ///   Created by Quân Nguyễn on 4/1/25.
+  internal static let notificationTitle = Localizable_strings.tr("Localizable", "Notification_Title", fallback: "Notification")
+  /// Profile Detail
+  internal static let profileDetail = Localizable_strings.tr("Localizable", "Profile_Detail", fallback: "Profile Detail")
+  /// Profile
+  internal static let profileTitle = Localizable_strings.tr("Localizable", "Profile_Title", fallback: "Profile")
+}
+// swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
+// swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces
+
+// MARK: - Implementation Details
+
+extension Localizable_strings {
+  private static func tr(_ table: String, _ key: String, _ args: CVarArg..., fallback value: String) -> String {
+    let format = BundleToken.bundle.localizedString(forKey: key, value: value, table: table)
+    return String(format: format, locale: Locale.current, arguments: args)
+  }
+}
+
+// swiftlint:disable convenience_type
+private final class BundleToken {
+  static let bundle: Bundle = {
+    #if SWIFT_PACKAGE
+    return Bundle.module
+    #else
+    return Bundle(for: BundleToken.self)
+    #endif
+  }()
+}
+// swiftlint:enable convenience_type
