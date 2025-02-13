@@ -8,34 +8,35 @@
 import UIKit
 
 class HomeViewController: BaseViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = Localizable_strings.homeTitle
-        APIClient.shared.getUsers { result in
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        APIClient.shared.createUser(name: "Quannq", job: "ios") { result in
             switch result {
-            case.success(let users):
-                if let users = users, let userData = users.data {
-                    userData.forEach({ user in
-                        print(user.firstName ?? "")
-                        print(user.email ?? "")
-                        print("")
-                    })
+            case .success(let data):
+                if let user = data {
+                    print(user.name, user.job)
                 }
             case .failure(let error):
                 print(error)
             }
         }
         
-        APIClient.shared.getUserInfo(id: 1) { result in
-            switch result {
-            case .success(let user):
-                if let user = user?.data {
-                    print(user.email ?? "")
-                }
-            case .failure(let error):
-                print(error)
-            }
-        }
+//        APIClient.shared.getUsers { result in
+//            switch result {
+//                case .success(let data):
+//                if let users = data?.data {
+//                    users.forEach { user in
+//                        print(user.firstName, user.email)
+//                    }
+//                }
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
     }
 }

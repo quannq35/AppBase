@@ -12,9 +12,9 @@ enum APIRoute {
     case getUsers
     case getUserInfor(id: String)
     case creatorUser(name: String, job: String)
+    case creatorUserEncodable(user: User)
 }
 extension APIRoute: Endpoint {
-    
     var baseUrl: String {
         switch self {
         default:
@@ -24,7 +24,7 @@ extension APIRoute: Endpoint {
     
     var path: String {
         switch self {
-        case .getUsers, .creatorUser:
+        case .getUsers, .creatorUser, .creatorUserEncodable:
             return "/users"
         case .getUserInfor(let id):
             return "/users/\(id)"
@@ -35,17 +35,19 @@ extension APIRoute: Endpoint {
         switch self {
         case .getUsers, .getUserInfor:
             return .get
-        case .creatorUser:
+        case .creatorUser, .creatorUserEncodable:
             return .post
         }
     }
     
-    var parameters: Parameters {
+    var parameters: Params {
         switch self {
         case .getUsers, .getUserInfor:
-            return .plain
+            return .encodable(object: nil, encoder: URLEncodedFormParameterEncoder.default)
         case .creatorUser(let name, let job):
-            return .params(prameters: ["name" : name, "job": job], encoding: JSONEncoding.default)
+            return .parameters(parameters: ["name" : name, "job": job], encoding: JSONEncoding.default)
+        case .creatorUserEncodable(let user):
+            return .encodable(object: AnyEncodable(user), encoder: JSONParameterEncoder.default)
         }
     }
     
@@ -55,6 +57,28 @@ extension APIRoute: Endpoint {
             return [:]
         }
     }
-    
-    
+      
+    func asURLRequest() throws -> URLRequest {
+        let url = try (baseUrl + path).asURL()
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = method.rawValue
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Accept")
+        urlRequest.setValue("accessToken", forHTTPHeaderField: "X-PKT-Authorization")
+        urlRequest.timeoutInterval = 20.0
+        
+        switch method {
+        case .get, .delete:
+            if case .parameters(let parameters, _) = parameters {
+                let queryRequest = try URLEncoding(destination: .queryString).encode(urlRequest, with: parameters)
+                return queryRequest
+            }
+        case .post, .put:
+            if case .parameters(let parameters, _) = parameters {
+                // Encode parameters vào httpBody của urlRequest
+                let queryRequest = try JSONEncoding.default.encode(urlRequest, with: parameters)
+                return queryRequest
+            }
+        }
+        return urlRequest
+    }
 }
